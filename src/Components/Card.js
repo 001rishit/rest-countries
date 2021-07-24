@@ -3,9 +3,10 @@ const commaNumber = require('comma-number')
 
 
 export default function Card({ country, countries }) {
+	//console.log(country.name);
 
 	return (
-		<Link to={{pathname: `/country/${country.name}`, singleCountry: country, countries: countries}}  >
+		<Link to={{pathname: `/country/${country.name.trim().replaceAll("\\s", "%20")}`, singleCountry: country, countries: countries}}  >
 			<div className="grid-card">
 				<div className="card">
 					<div className="card-image">
@@ -14,8 +15,10 @@ export default function Card({ country, countries }) {
 						</figure>
 					</div>
 					<div className="card-content">
-						<div className="content">
+					   <div className="content">
 							<h3><strong>{country.name}</strong></h3>
+						</div>
+						<div className="content">
 							<h5><strong>Population: </strong>{commaNumber(country.population)}</h5>
 							<h5><strong>Region: </strong>{country.region}</h5>
 							<h5><strong>Capital: </strong>{country.capital}</h5>
