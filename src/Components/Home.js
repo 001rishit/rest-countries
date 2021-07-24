@@ -53,7 +53,7 @@ export default function Home() {
 				</div>
 				<div className="select">
 					<select id="regions" onChange={selectChange}>
-						<option value="All">Filter By Region</option>
+						<option value="All" defaultValue>Filter by region</option>
 						<option value="Africa">Africa</option>
 						<option value="Americas">America</option>
 						<option value="Asia">Asia</option>
